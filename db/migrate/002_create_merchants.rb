@@ -1,12 +1,12 @@
-migration 2, :create_purchasers do
+migration 2, :create_merchants do
   up do
-    create_table :purchasers do
+    create_table :merchants do
       column :id, Integer, :serial => true
       column :name, DataMapper::Property::String, :length => 255
     end
   end
 
   down do
-    drop_table :purchasers
+    drop_table :merchants
   end
 end

@@ -10,4 +10,8 @@ class Purchase
   belongs_to :purchaser
   belongs_to :merchant_address
   belongs_to :pricing
+
+  def revenue
+    pricing.price * purchase_count
+  end
 end

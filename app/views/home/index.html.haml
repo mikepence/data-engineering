@@ -1,0 +1,10 @@
+!!!
+%head
+%body
+  %p
+    Welcome to Mike Pence's answer to the Data Engineering exercise. Upload your file below. Note that, for simplicity, we empty the database for each import.
+  %p
+    = form_for :submission, url(:home, :create_submission), :multipart => true do |f|
+
+      = f.file_field :input_file, :class => 'form-control input-large input-with-feedback', :autofocus => true
+      = f.submit

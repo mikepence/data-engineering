@@ -26,7 +26,11 @@ class Importer
               :pricing => pricing,
               :purchase_count => raw_purchase[:purchase_count])
 
-          raise "The purchase at line #{index + 1} could not be saved. Database changes will be rolled back." unless purchase.save
+          if purchase.save
+            true
+          else
+            raise "The purchase at line #{index + 1} could not be saved. Database changes will be rolled back."
+          end
         end
       rescue Exception => e
         t.rollback
@@ -34,4 +38,8 @@ class Importer
       end
     end
   end
+end
+
+class Submission
+  # Placeholder
 end
