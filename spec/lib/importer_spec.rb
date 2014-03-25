@@ -2,6 +2,15 @@ require 'spec_helper'
 
 describe Importer do
 
+  before :each do
+    Purchaser.destroy
+    Merchant.destroy
+    MerchantAddress.destroy
+    Item.destroy
+    Pricing.destroy
+    Purchase.destroy
+  end
+
   it 'imports successfully' do
     Importer.import(StringIO.new(good_data))
 
