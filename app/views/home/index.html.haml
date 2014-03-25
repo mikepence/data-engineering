@@ -2,7 +2,9 @@
 %head
 %body
   %p
-    Welcome to Mike Pence's answer to the Data Engineering exercise. Upload your file below. Note that, for simplicity, we empty the database for each import.
+    Welcome to Mike Pence's answer to the Data Engineering exercise.
+  %em
+    Note that, for simplicity, we empty the database before each import.
   %p
     = form_for :submission, url(:home, :create_submission), :multipart => true do |f|
 
